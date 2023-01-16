@@ -19,6 +19,10 @@ public class Piece {
 		return position;
 	}
 	
+	public boolean isDone() {
+		return done;
+	}
+	
 	public String toString() {
 		if(colour==0) {
 			return String.format("white %d", position);

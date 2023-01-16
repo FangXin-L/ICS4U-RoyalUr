@@ -20,36 +20,74 @@ public class Driver {
 			player2.add(piece);
 		}
 
-		displayPlayer(player1);
-		displayPlayer(player2);
-		
-		boolean done = false;
-		Scanner in  = new Scanner(System.in);
+		//displayPlayer(player1);
+		//displayPlayer(player2);
+
+		//Game parameters
+		boolean gameDone = false;
+		int winner = 0;
+		Scanner in = new Scanner(System.in);
+		//4-sided die
 		Die die = new Die(4);
-		while (!done) {
+
+		while (gameDone==false) {
+			//Roll die
 			int roll = die.roll();
-			
-			System.out.println("Move white(0) or black(1)? ");
+
+			//Select color & piece to move
+			System.out.println("White(0) or black(1)? ");
 			int colourSelect = in.nextInt();
-			
-			System.out.println("Move which piece(1-5)? ");
-			int pieceSelect =  in.nextInt();
-			
-			if (colourSelect==0) {
-				player1.get(pieceSelect-1).updatePosition(roll);
+
+			System.out.println("Move a piece(1-5)? ");
+			int pieceSelect = in.nextInt();
+
+			//Move piece
+			if (colourSelect == 0) {
+				player1.get(pieceSelect - 1).updatePosition(player1.get(pieceSelect-1).getPosition()+roll);
+			} else {
+				player2.get(pieceSelect - 1).updatePosition(player2.get(pieceSelect-1).getPosition()+roll);
 			}
-			else {
-				player2.get(pieceSelect-1).updatePosition(roll);
-			}
-			
+
 			displayPlayer(player1);
 			displayPlayer(player2);
-			
-			//System.out.println(colourSelect);
-			//System.out.println(pieceSelect);
+
+			// System.out.println(colourSelect);
+			// System.out.println(pieceSelect);
 			System.out.println("Roll = " + roll);
-			done = true;
+			
+			//Check position of pieces
+			int player1done = 0;
+			for(Piece p:player1) {
+				if(p.getPosition()>14) {
+					player1done += 1;
+				}
+			}
+			int player2done = 0;
+			for(Piece p:player2) {
+				if(p.getPosition()>14) {
+					player2done += 1;
+				}
+			}
+			//Game over if all pieces of same color are done
+			if(player1done>4) {
+				gameDone = true;
+				winner = 1;
+			}
+			else if(player2done>4) {
+				gameDone = true;
+				winner = 2;
+			}
 		}
+		
+		//End message
+		if(winner == 1) {
+			System.out.println("White has won.");
+		}
+		else if(winner == 2) {
+			System.out.println("Black has won.");
+		}
+
+		in.close();
 	}
 
 	public static void displayPlayer(ArrayList<Piece> pieces) {
@@ -57,5 +95,5 @@ public class Driver {
 			System.out.println(pieces.get(i));
 		}
 	}
-	
+
 }
