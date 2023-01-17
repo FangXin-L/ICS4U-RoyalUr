@@ -33,6 +33,7 @@ public class Driver {
 		while (gameDone==false) {
 			//Roll die
 			int roll = die.roll();
+			System.out.println("Roll = " + roll);
 
 			//Select color & piece to move
 			System.out.println("White(0) or black(1)? ");
@@ -53,7 +54,7 @@ public class Driver {
 
 			// System.out.println(colourSelect);
 			// System.out.println(pieceSelect);
-			System.out.println("Roll = " + roll);
+			
 			
 			//Check position of pieces
 			int player1done = 0;
