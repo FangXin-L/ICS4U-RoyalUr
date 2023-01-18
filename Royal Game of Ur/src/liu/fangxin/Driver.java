@@ -25,6 +25,8 @@ public class Driver {
 
 		//Game parameters
 		boolean gameDone = false;
+		boolean whiteOverlap = false;
+		boolean blackOverlap = false;
 		int winner = 0;
 		Scanner in = new Scanner(System.in);
 		//4-sided die
@@ -43,10 +45,30 @@ public class Driver {
 			int pieceSelect = in.nextInt();
 
 			//Move piece
-			if (colourSelect == 0) {
-				player1.get(pieceSelect - 1).updatePosition(player1.get(pieceSelect-1).getPosition()+roll);
-			} else {
-				player2.get(pieceSelect - 1).updatePosition(player2.get(pieceSelect-1).getPosition()+roll);
+			if (colourSelect == 0 && roll>0) {
+				for(Piece p:player1) {
+					if (p.getPosition() == player1.get(pieceSelect-1).getPosition()+roll) {
+						whiteOverlap  = true;
+						System.out.println("Move blocked");
+					}
+				}
+				if(!whiteOverlap) {
+				player1.get(pieceSelect - 1).updatePosition(
+						player1.get(pieceSelect-1).getPosition()+roll);
+				}
+			}
+			
+			else if (colourSelect == 1 && roll>0) {
+				for(Piece p:player2) {
+					if (p.getPosition() == player2.get(pieceSelect-1).getPosition()+roll) {
+						blackOverlap  = true;
+						System.out.println("Move blocked");
+					}
+				}
+				if(!blackOverlap) {
+				player2.get(pieceSelect - 1).updatePosition(
+						player2.get(pieceSelect-1).getPosition()+roll);
+				}
 			}
 
 			displayPlayer(player1);
