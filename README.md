@@ -1,4 +1,5 @@
 # ICS4U-RoyalUr
+Culminating assignment 2023-01, RCI.
 The Royal Game of Ur is a board game widely played from 3000 to 2000 BCE. Precursor of backgammon.
 Two-player race. Mix of luck and strategy.
 
