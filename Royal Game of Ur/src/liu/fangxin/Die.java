@@ -2,17 +2,23 @@ package liu.fangxin;
 
 import java.util.Random;
 
+/**
+ * Die with zero
+ * 
+ * @author bird1
+ *
+ */
 public class Die {
 	private int value;
 	private int numSides;
-	
-	Die(int num){
+
+	Die(int num) {
 		numSides = num;
 	}
-	
+
 	public int roll() {
 		Random random = new Random();
-		value = random.nextInt(Integer.valueOf(numSides)+1);
+		value = random.nextInt(Integer.valueOf(numSides) + 1);
 		return value;
 	}
 }

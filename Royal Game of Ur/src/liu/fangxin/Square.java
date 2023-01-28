@@ -1,60 +1,63 @@
 package liu.fangxin;
 
+/**
+ * Properties of squares on board 
+ * Not in use currently
+ * @author bird1
+ *
+ */
 public class Square {
-	 boolean empty;
-	 boolean isWhite;
+	boolean empty;
+	boolean isWhite;
 	boolean isBlack;
-	
-	Square(char s){
-		if(s=='e') {
-		empty = true;
-		isWhite = false;
-		isBlack = false;
+
+	Square(char s) {
+		if (s == 'e') {
+			empty = true;
+			isWhite = false;
+			isBlack = false;
 		}
-		if(s=='w') {
+		if (s == 'w') {
 			empty = false;
 			isWhite = true;
 			isBlack = false;
 		}
-		if(s=='b') {
+		if (s == 'b') {
 			empty = false;
 			isWhite = false;
 			isBlack = true;
 		}
-		if(s=='2') {
+		if (s == '2') {
 			empty = false;
 			isWhite = true;
 			isBlack = true;
 		}
-		
+
 	}
-	
+
 	public boolean isEmpty() {
 		return empty;
 	}
-	
+
 	public boolean isWhite() {
 		return isWhite;
 	}
-	
+
 	public boolean isBlack() {
 		return isBlack;
 	}
-	
+
 	@Override
 	public String toString() {
-		if (isWhite==true && isBlack==true) {
+		if (isWhite == true && isBlack == true) {
 			return "both";
-		}
-		else if(isBlack == true) {
+		} else if (isBlack == true) {
 			return "black";
-		}
-		else if(isWhite == true) {
+		} else if (isWhite == true) {
 			return "white";
-		}
-		else if (empty == true) {
+		} else if (empty == true) {
 			return "empty";
-			}
+		}
 		return "error";
 	}
 
