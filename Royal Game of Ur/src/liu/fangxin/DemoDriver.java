@@ -35,7 +35,7 @@ import javafx.stage.Stage;
 /**
  * Test driver for buttons 
  * Not in use
- * @author bird1
+ * @author Fangxin
  *
  */
 public class DemoDriver extends Application {

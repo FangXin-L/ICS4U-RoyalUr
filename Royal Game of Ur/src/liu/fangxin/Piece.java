@@ -3,7 +3,7 @@ package liu.fangxin;
 /**
  * Game pieces
  * 
- * @author bird1
+ * @author Fangxin
  *
  */
 public class Piece {

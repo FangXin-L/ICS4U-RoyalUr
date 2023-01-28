@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Die with zero
  * 
- * @author bird1
+ * @author Fangxin
  *
  */
 public class Die {

@@ -3,7 +3,7 @@ package liu.fangxin;
 /**
  * Properties of squares on board 
  * Not in use currently
- * @author bird1
+ * @author Fangxin
  *
  */
 public class Square {

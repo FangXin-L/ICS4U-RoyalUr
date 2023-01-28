@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Contain game logic 
  * Not in use currently
- * @author bird1
+ * @author Fangxin
  */
 public class Board {
 

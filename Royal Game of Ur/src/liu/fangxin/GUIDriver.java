@@ -37,7 +37,7 @@ import liu.fangxin.NewButton;
  * Graphical driver  
  * NEED TO ADD IMAGES FOLDER
  * 
- * @author bird1
+ * @author Fangxin
  *
  */
 public class GUIDriver extends Application {

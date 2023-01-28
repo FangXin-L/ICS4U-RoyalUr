@@ -10,7 +10,7 @@ import java.util.Scanner;
  * Most logic is functional
  * Manual input required
  * 
- * @author bird1
+ * @author Fangxin
  *
  */
 public class Driver {

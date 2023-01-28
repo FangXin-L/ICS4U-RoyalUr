@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 /**
  * Button class 
  * Not in use currently
- * @author bird1
+ * @author Fangxin
  *
  */
 public class NewButton extends Button {
